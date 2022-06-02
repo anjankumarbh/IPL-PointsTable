@@ -84,14 +84,17 @@ class Team{
 	}
 	public boolean consecutive(List<String> s,int n,String m) {
 		int count=0;
-		for(int i=0;i<s.size()-n;i++) {
-			for(int j=i;j<n+i;j++) {
-				if(s.get(j).equals(m)) {
+		int temp=0;
+		for(int i=n;i<s.size();i++) {
+			temp=n;
+			while(temp>=0) {
+				if(s.get(count).equals(m)) {
 					count++;
 				}
 				if(count==n) {
 					return true;
 				}
+				temp--;
 			}
 		}
 		return false;
